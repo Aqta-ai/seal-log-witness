@@ -37,8 +37,13 @@ if (prev) {
   if (sth.tree_size < prev.size) alert('log shrank', `previous ${prev.kind}: size ${prev.size}; current head: size ${sth.tree_size}`)
   if (sth.tree_size === prev.size) {
     if (sth.root_hash !== prev.root) alert('root changed at the same size', `size ${prev.size}: recorded root ${prev.root}, current root ${sth.root_hash}`)
-    writeFileSync(STATUS, JSON.stringify({ last_checked: now, last_size: sth.tree_size, last_root: sth.root_hash, heads_witnessed: lines.length, changed: false }, null, 2) + '\n')
-    console.log(`unchanged: size ${sth.tree_size}, root ${sth.root_hash.slice(0, 12)}…`)
+    // A head already on record but without its own file (an interrupted earlier run) gets the
+    // file now, so the signing step can countersign it.
+    const headFile = `${ROOT}witness/heads/${String(sth.tree_size).padStart(8, '0')}.json`
+    const backfilled = last && !existsSync(headFile)
+    if (backfilled) writeFileSync(headFile, JSON.stringify({ sth: { v: 1, log: 'public', tree_size: last.tree_size, root_hash: last.root_hash, timestamp: last.timestamp, signature: last.signature, public_key: last.public_key, key_id: last.key_id }, consistency: last.consistency_from === null ? null : { old_size: last.consistency_from, new_size: last.tree_size, consistency_path: last.consistency_path } }, null, 2) + '\n')
+    writeFileSync(STATUS, JSON.stringify({ last_checked: now, last_size: sth.tree_size, last_root: sth.root_hash, heads_witnessed: lines.length, changed: Boolean(backfilled) }, null, 2) + '\n')
+    console.log(`unchanged: size ${sth.tree_size}, root ${sth.root_hash.slice(0, 12)}…${backfilled ? ' (head file written for signing)' : ''}`)
     process.exit(0)
   }
 }
