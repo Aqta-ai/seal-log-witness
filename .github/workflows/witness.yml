@@ -1,0 +1,64 @@
+name: Witness the Seal public log
+
+# Hourly: fetch the current signed head of Aqta's public transparency log, verify its signature
+# under the pinned key, prove it consistent with the last head recorded here, append it, and sign
+# the new record into Sigstore's public log with this workflow's GitHub identity. A log that
+# shrinks, forks, or fails its signature makes this job fail loudly and leaves an alert file.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: witness
+  cancel-in-progress: false
+
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch the head, verify it, prove consistency, append
+        id: w
+        run: |
+          node scripts/witness.mjs | tee witness.out
+          echo "changed=$(node -p "require('./witness/status.json').changed")" >> "$GITHUB_OUTPUT"
+          echo "size=$(node -p "require('./witness/status.json').last_size")" >> "$GITHUB_OUTPUT"
+
+      - name: Re-verify the whole chain offline, from the files alone
+        run: node scripts/check.mjs
+
+      - uses: sigstore/cosign-installer@v3
+        if: steps.w.outputs.changed == 'true'
+
+      - name: Sign the new head record into Sigstore (keyless, GitHub OIDC), then verify it
+        if: steps.w.outputs.changed == 'true'
+        run: |
+          f="witness/heads/$(printf '%08d' "${{ steps.w.outputs.size }}").json"
+          cosign sign-blob --yes --bundle "$f.sigstore.json" "$f"
+          cosign verify-blob --bundle "$f.sigstore.json" \
+            --certificate-identity-regexp '^https://github.com/Aqta-ai/seal-log-witness/' \
+            --certificate-oidc-issuer https://token.actions.githubusercontent.com "$f"
+
+      - name: Commit the record
+        run: |
+          git config user.name 'seal-log-witness'
+          git config user.email 'security@aqta.ai'
+          git add witness
+          if git diff --cached --quiet; then echo "nothing to commit"; else git commit -m "witness: $(head -1 witness.out)"; git push; fi
+
+      - name: Commit the alert if the log misbehaved
+        if: failure()
+        run: |
+          git config user.name 'seal-log-witness'
+          git config user.email 'security@aqta.ai'
+          git add witness/alerts 2>/dev/null || true
+          if git diff --cached --quiet; then echo "no alert file"; else git commit -m "ALERT: the public log failed a witness check"; git push; fi
