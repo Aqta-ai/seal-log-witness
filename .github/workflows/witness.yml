@@ -28,12 +28,15 @@ jobs:
 
       - name: Fetch the head, verify it, prove consistency, append
         id: w
+        shell: bash
         run: |
+          set -euo pipefail
           node scripts/witness.mjs | tee witness.out
           echo "changed=$(node -p "require('./witness/status.json').changed")" >> "$GITHUB_OUTPUT"
           echo "size=$(node -p "require('./witness/status.json').last_size")" >> "$GITHUB_OUTPUT"
 
       - name: Re-verify the whole chain offline, from the files alone
+        shell: bash
         run: node scripts/check.mjs
 
       - uses: sigstore/cosign-installer@v3
@@ -41,7 +44,9 @@ jobs:
 
       - name: Sign the new head record into Sigstore (keyless, GitHub OIDC), then verify it
         if: steps.w.outputs.changed == 'true'
+        shell: bash
         run: |
+          set -euo pipefail
           f="witness/heads/$(printf '%08d' "${{ steps.w.outputs.size }}").json"
           cosign sign-blob --yes --bundle "$f.sigstore.json" "$f"
           cosign verify-blob --bundle "$f.sigstore.json" \
@@ -49,7 +54,9 @@ jobs:
             --certificate-oidc-issuer https://token.actions.githubusercontent.com "$f"
 
       - name: Commit the record
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'seal-log-witness'
           git config user.email 'security@aqta.ai'
           git add witness

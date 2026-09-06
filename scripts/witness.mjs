@@ -10,6 +10,7 @@ const HEADS = ROOT + 'witness/heads.jsonl'
 const ANCHORS = ROOT + 'witness/anchors.json'
 const STATUS = ROOT + 'witness/status.json'
 const TRUSTED_KEY = readFileSync(ROOT + 'witness/trusted-key.txt', 'utf8').trim()
+mkdirSync(ROOT + 'witness/heads', { recursive: true })
 
 const now = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
 const lines = existsSync(HEADS) ? readFileSync(HEADS, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []
