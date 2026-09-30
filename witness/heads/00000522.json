@@ -1,0 +1,39 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 522,
+    "root_hash": "75190f9d5138ad07c64139626e069ec7dea483be4855d7b205d575c55a04e26e",
+    "timestamp": "2026-09-30T23:02:33Z",
+    "signature": "T7zAKLygULkSN7odPBRnHMptno34eVdH4NOyhoe0rLFcMpKvS5o53DK-sRI3SFvSg7VdYknQGx_GxGgygOAUAA",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00) and ACTION-v1 records (entry tag 0x02), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id or action_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 511,
+    "new_size": 522,
+    "old_root": "2f93fce6499fb76d82cf8df124653337464d1b6d777dfbad5f51153383c0b1b9",
+    "new_root": "75190f9d5138ad07c64139626e069ec7dea483be4855d7b205d575c55a04e26e",
+    "consistency_path": [
+      "118eec27d048eb8973bf08fcc2add9290b0c1da6f10f3235b83365fa0c939b8a",
+      "5a94a2039c8c8541faa36550312b5f0ebf68f37c301723786688d2575fda5bde",
+      "a855fd46b45e926fa3fb57e8191543e0cc2e05cf2c5750e844c2a2d4e6e73cad",
+      "597a890db77bdb68b199dd0563d47b1004aaa6f097819e6eb00787fc79a7e59c",
+      "f46e4c8531772663586961894e8621a6b269c56980dabb108cb2f9ad08ebc023",
+      "98b9b98bdb639eceedd15a1f83f31b8e46b4dfcb5eaf2c8c7fd37458f7e6e7b1",
+      "73d07915ab345dbb24315a4366ca51282440a7078c6559764329d420db0cfaf1",
+      "081088180290a7a1e72a660a1a08d2663e1fa2267c2e6a3debd03185f1f73180",
+      "37bef25cbc48e8d5a07b73c9fc2b907463dfff2697ca229d0ca6d1350bdd2f54",
+      "1c44bca49902f429f16fcae72603d389275e1a859603e94aeaf2ba959eeceafe",
+      "e9de9625d7869f40927b84b346ea626bcc02ae40567acc15675f109aca80828f"
+    ]
+  }
+}
