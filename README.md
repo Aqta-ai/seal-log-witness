@@ -57,4 +57,5 @@ on `app.aqta.ai/transparency`. The size 196 root in `witness/anchors.json` was r
 4 September 2026, immediately before action records were added to the log, and the first head
 witnessed here carries the consistency proof from that root.
 
-Licence: Apache-2.0. Scripts mirror `dashboard/lib/transparency-client.ts` in `Aqta-ai/aqta-app`.
+Licence: Apache-2.0. The scripts apply the same checks as the browser monitor at
+`app.aqta.ai/transparency`.

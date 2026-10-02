@@ -1,5 +1,5 @@
 // Shared verification for the Seal public log witness. No dependencies: Node 20 crypto only.
-// Mirrors dashboard/lib/transparency-client.ts in Aqta-ai/aqta-app so the two cannot drift.
+// Applies the same checks as the browser monitor at app.aqta.ai/transparency.
 import { createHash, createPublicKey, verify as edVerify } from 'node:crypto'
 
 export const STH_URL = 'https://api.aqta.ai/v1/public/transparency/sth'
