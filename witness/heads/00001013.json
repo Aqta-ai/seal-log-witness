@@ -1,0 +1,39 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 1013,
+    "root_hash": "f2036e6ef5cd47287d7a768df622b66e18b019c176757534ead5bcc0e8f251ae",
+    "timestamp": "2026-10-16T14:49:53Z",
+    "signature": "59S8KfW0ziLGxT6PYqrqF_HYdtLyGVXzLu3Nj2xg87WQDST8edzRCJPpPYUx5BYxHjnoFeI1s9G_G6yABvScAA",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00) and ACTION-v1 records (entry tag 0x02), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id or action_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 957,
+    "new_size": 1013,
+    "old_root": "20f28b41172909783dc823a076c8fe79b6c81b22d223ecef8830016b790ff532",
+    "new_root": "f2036e6ef5cd47287d7a768df622b66e18b019c176757534ead5bcc0e8f251ae",
+    "consistency_path": [
+      "0af1ab02806316ce55927377d3828f28bf569d4142fda25e40353d08b0fc8e8f",
+      "0ce55b2d7918a358a962cc4ee13d0c8b1e73c022484404db152498c6a54b2cb3",
+      "a250a6e09136656394a0285390f096fef8455cd3cf39bacf4ed6c76ef7205844",
+      "0dff3abc0870dc940a03c313b5abe93be882edbb104ec50c1e57ff1aaf6ea1dc",
+      "f47792dfabc290f43ae067cda7d59a825d3577c874a3347deaa89c6b1d404f94",
+      "74cc424c77849c98f32609ca686d460eb98ec184616391ef1599fc57c820ffac",
+      "6927a4f0cf747970f7135cb3673749d02d2a769214373b3dd82ce3fa3872fc44",
+      "d0d0e9da024a3f35721a9ab5c83a5dacd707470990ec36e97cdec4197b7cb25f",
+      "0af10e92facaa5d8dcde94d79b499b5bb21f1f55facb930103ee1939cbbdc184",
+      "4e55e0bc524f2501895249d59e7a20ac16036bd309128c590309a2f63ba82428",
+      "54b0f91c7dcf0e8213ed111895d5f154b5091efb56e661a68ea7117e42c658d5"
+    ]
+  }
+}
