@@ -91,9 +91,9 @@ It proves that the sequence of heads recorded here was published by the holder o
 key, that each head extends the previous one without rewriting anything beneath it, and that each
 record existed at the time Sigstore countersigned it. It does not prove anything about the
 content of the log's entries, which are hashes, and it does not make the witness independent of
-Aqta in the strongest sense: Aqta operates this repository. Its independence comes from where the
-evidence lives, in GitHub's commit history and Sigstore's public log, and from the fact that
-anyone can fork this repository and run the same script on their own schedule. If you run one,
+Aqta: Aqta operates this repository. What a reader can check without trusting Aqta is where the
+evidence lives, in GitHub's commit history and Sigstore's public log, and anyone can fork this
+repository and run the same script on their own schedule. If you run one,
 tell security@aqta.ai and it will be listed here.
 
 ## Provenance of the starting point
