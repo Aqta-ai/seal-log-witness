@@ -1,7 +1,12 @@
 {
-  "last_checked": "2026-10-17T19:22:15Z",
-  "last_size": 1180,
-  "last_root": "eaab1454dc7d6f356c522bdeee562777ea5ae331c4d1d055545cbd9245954858",
-  "heads_witnessed": 45,
-  "changed": true
+  "last_checked": "2026-10-17T22:16:26Z",
+  "last_size": 1181,
+  "last_root": "dc59e7ae8c6aa872c0d6f30e09ebb00721d62b7d40ade2b2e44153fdac798958",
+  "heads_witnessed": 46,
+  "changed": true,
+  "rekor_index": "witness/rekor-index.json",
+  "rekor_latest_size": 1181,
+  "rekor_latest_log_index": 3301627288,
+  "rekor_latest_search_url": "https://search.sigstore.dev/?logIndex=3301627288",
+  "rekor_entries": 46
 }
