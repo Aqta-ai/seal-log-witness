@@ -1,6 +1,6 @@
 # seal-log-witness
 
-An hourly, independent record of the signed heads of Aqta's public transparency log for Seal
+An hourly record of the signed heads of Aqta's public transparency log for Seal
 receipts and action records, kept outside Aqta's infrastructure, with every new head signed into
 Sigstore's public log by this repository's GitHub Actions identity.
 
@@ -21,7 +21,11 @@ quietly rewrite.
 4. Re-verifies the entire chain offline from the files alone (`scripts/check.mjs`).
 5. Signs the new head file into Sigstore's Rekor log with the workflow's GitHub OIDC identity
    (`cosign sign-blob`), so a third party holds a timestamped record that this file existed.
-6. Commits. An unchanged head still updates `witness/status.json`, which is the heartbeat.
+6. Records, in `witness/rekor-index.json`, the Rekor entry each head file's bundle holds, keyed
+   by tree size (`scripts/rekor-index.mjs`). A full entry UUID the bundle does not carry comes
+   from a read-only Rekor lookup, checked against the bundle. `witness/status.json` gains the
+   latest entry's log index.
+7. Commits. An unchanged head still updates `witness/status.json`, which is the heartbeat.
 
 A log that shrinks, changes a root at the same size, fails its signature, or fails a
 consistency proof makes the job fail and leaves a file in `witness/alerts/`.
@@ -38,6 +42,48 @@ cosign verify-blob --bundle witness/heads/<size>.json.sigstore.json \
 ```
 
 No dependencies beyond Node 20 for the first two. `cosign` is Sigstore's tool.
+
+## From a tree size to its Sigstore entry
+
+`witness/rekor-index.json` maps every witnessed tree size to the Rekor entry that countersigned
+its head file: the head and bundle paths, Rekor's `log_index`, `log_id`, `integrated_time`, the
+entry `uuid`, and a link to `https://search.sigstore.dev/?logIndex=N`. It is rebuilt from the
+bundles in this repository, so you do not have to trust it either:
+
+```bash
+size=1180
+f="witness/heads/$(printf '%08d' "$size").json"
+node -p "require('./witness/rekor-index.json').entries['$size']"     # log index, UUID, link
+n=$(node -p "require('./witness/rekor-index.json').entries['$size'].log_index")
+
+# 1. The bundle verifies for this exact file, under this repository's workflow identity.
+cosign verify-blob --bundle "$f.sigstore.json" \
+  --certificate-identity-regexp '^https://github.com/Aqta-ai/seal-log-witness/' \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com "$f"
+
+# 2. Rekor itself holds that entry, with an inclusion proof against its current tree.
+rekor-cli verify --rekor_server https://rekor.sigstore.dev --log-index "$n"
+
+# 3. Without either tool: the entry Rekor serves commits to the SHA-256 of this file.
+curl -s "https://rekor.sigstore.dev/api/v1/log/entries?logIndex=$n" \
+  | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const e=Object.values(JSON.parse(s))[0];console.log(JSON.parse(Buffer.from(e.body,"base64")).spec.data.hash.value, new Date(e.integratedTime*1000).toISOString())})'
+shasum -a 256 "$f"
+```
+
+`node scripts/rekor-index.mjs` rebuilds the index offline from the bundles and refuses any bundle
+whose entry does not commit to the bytes of its head file; `--lookup` also fetches missing UUIDs
+from Rekor, one request a second at most, and stops if Rekor and the bundle disagree.
+`node --test test/*.test.mjs` runs its tests.
+
+What this proves: the head file at that tree size existed, byte for byte, when Rekor integrated
+the entry, and it was countersigned by a certificate issued to this repository's GitHub Actions
+workflow, which runs under Aqta's GitHub organisation. The record sits in Rekor, a public log
+operated by Sigstore, not by Aqta, so Aqta cannot later remove or backdate it. Aqta is the party
+that submits it.
+
+What it does not prove: that the witness is independent of Aqta, since Aqta runs the workflow
+and chooses when it runs; or that every decision Seal made was logged. It shows when a head was
+seen, not that the log holds everything it should.
 
 ## What this proves, and what it does not
 
