@@ -1,9 +1,9 @@
 {
-  "last_checked": "2026-10-19T19:19:06Z",
+  "last_checked": "2026-10-19T23:37:35Z",
   "last_size": 1256,
   "last_root": "701f816fa37bac78538acecbc0b5c76c8d5c95ee4d5cea754e56e8f52505840b",
   "heads_witnessed": 54,
-  "changed": true,
+  "changed": false,
   "rekor_index": "witness/rekor-index.json",
   "rekor_latest_size": 1256,
   "rekor_latest_log_index": 3325461591,
