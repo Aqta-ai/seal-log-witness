@@ -1,0 +1,39 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 2012,
+    "root_hash": "9d71a578a299741537d950cbff12c0fb3724e592c861695036eedfd647a31458",
+    "timestamp": "2026-10-27T20:03:44Z",
+    "signature": "J9OnCijMjOzTEDaevQ6rFWGStYRjXbmodNdufwq_sKTP4v_ebmI5FhJLMThSaq07qE9PpmNsGYx290duZGzXBw",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 1985,
+    "new_size": 2012,
+    "old_root": "136c83e0f0805f33a2b1ef7bf4ed7524a905203ce08497c72810b4e9cefbc140",
+    "new_root": "9d71a578a299741537d950cbff12c0fb3724e592c861695036eedfd647a31458",
+    "consistency_path": [
+      "d0703d2e705f4e1a54ef8cafd41f221a91d3d24a6e41a72275b471d5e1f55048",
+      "21f40b17815b1dba2f62c4c4ccbc9675ea6683c0c16a22fd9338673b6237bd22",
+      "0530f6de0f6f72968a488d693fde78b6a98aff0ce8d0a254bcd088d1635f7a63",
+      "820248f0c2e2dc8e89a185496f321884da2d917dc58db12e5907e6787c9a1e22",
+      "deff3e2d0e5ed6d91dfb38c88456f26f8e8d51bb18ae5cf10cb00e2dd4553b30",
+      "0caaeb0146aae6b08517a0099cd669c7fb2d7122fae59dbb8c5f7cdf2542c434",
+      "9ec7f04ed5fba356a9412763665114490da3eae1facebb2ff0f891b6e7adb8d6",
+      "971e9a79f1049bed0463aada9c691cfb178ff585d0baeade54dc8a217710835a",
+      "de54dc9fef4a7380ce392458a8e37054049b3f2fc4056106c15dd087950357ad",
+      "eaa5992667a01145344264a58895410ad01113f6815ee09475c60acd227e4136",
+      "d5c5f6626891e1914f117c2006d58b923d2c31886371fc8f7eddeb43710d5891"
+    ]
+  }
+}

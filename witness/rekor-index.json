@@ -1,8 +1,8 @@
 {
   "v": 1,
   "rekor": "https://rekor.sigstore.dev",
-  "latest_size": 1985,
-  "count": 93,
+  "latest_size": 2012,
+  "count": 94,
   "entries": {
     "223": {
       "head_file": "witness/heads/00000223.json",
@@ -1119,6 +1119,18 @@
       "uuid": "108e9186e8c5677afd6ace3d1bc0e25872f8de89aa1f2aace6792ac6d0b685f440c9f0cda0a0e9ea",
       "proof_in_bundle": "signed_entry_timestamp",
       "search_url": "https://search.sigstore.dev/?logIndex=3519018751"
+    },
+    "2012": {
+      "head_file": "witness/heads/00002012.json",
+      "bundle_file": "witness/heads/00002012.json.sigstore.json",
+      "log_index": 3524568289,
+      "log_id": "c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d",
+      "integrated_time": 1793131426,
+      "integrated_at": "2026-10-27T20:03:46Z",
+      "leaf_hash": "bc24a915e225ee6c38fdbb8d2653eeedc8647a7549a05d400ad43fa8a90aec8c",
+      "uuid": "108e9186e8c5677abc24a915e225ee6c38fdbb8d2653eeedc8647a7549a05d400ad43fa8a90aec8c",
+      "proof_in_bundle": "signed_entry_timestamp",
+      "search_url": "https://search.sigstore.dev/?logIndex=3524568289"
     }
   }
 }
