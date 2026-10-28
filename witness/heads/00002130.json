@@ -1,0 +1,37 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 2130,
+    "root_hash": "937df9eaf922bd8c581b75dd32e4ec76070b97d705d47361421737c66955db41",
+    "timestamp": "2026-10-28T23:12:01Z",
+    "signature": "H3_UYjraRJDxt8kLFcRu5EYeaRqoto3tbkRdkcLsanKlbRxIX9rYV-slUkdovdMlnp16_diz5OzzwD2ZkikcDA",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 2105,
+    "new_size": 2130,
+    "old_root": "f5ea75e89827852c0e8ea78c045a3456af0c04eebfa7c915520c614941d4d391",
+    "new_root": "937df9eaf922bd8c581b75dd32e4ec76070b97d705d47361421737c66955db41",
+    "consistency_path": [
+      "3b5677e5c3fc035c001f2932deec833a12e88e50373925e2cd163fefb1cb33ce",
+      "551dca7221f903ad9b04e027b966d8f5901d3364a6b9c3c71aba526baded3d35",
+      "53d1dac7b7e2d146ccfd5210e23766497597bb3072481048d82778a1324cd683",
+      "fc1a00c8a57f978199f690edf87da386905b256c405eb29b486d77099d6a5929",
+      "30fcaef0d7e0a92b00c403f978d53f6a423086c0003b742d60196f2e28f0e3f6",
+      "c7a8f4e4f48107287b6c32fd8ad7a3805789702abd3e517ff930e182c04ef589",
+      "151d18b6e42a67febd4656a87d91141fbd2c4c3bc650f717cf55faa7074fcd74",
+      "0290c45f71cb5e539ce1598d313669c09bd920b67f43ea1b364dd5596807adb3",
+      "a669d4da4b9ff4b4c353f4e838843d84d8eb875ce02bd427163389446f8a9cdc"
+    ]
+  }
+}
