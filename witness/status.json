@@ -1,12 +1,12 @@
 {
-  "last_checked": "2026-10-31T06:58:14Z",
-  "last_size": 2377,
-  "last_root": "cedcb109d4758d2ae4acee0d45c4016e07b00d37e73022449422e7e351ebcb98",
-  "heads_witnessed": 109,
+  "last_checked": "2026-10-31T13:38:06Z",
+  "last_size": 2414,
+  "last_root": "14a0cec6b02e9e76b783df28e433907c9bfd6fe727f7782952c1bd41d922b7aa",
+  "heads_witnessed": 110,
   "changed": true,
   "rekor_index": "witness/rekor-index.json",
-  "rekor_latest_size": 2377,
-  "rekor_latest_log_index": 3611600596,
-  "rekor_latest_search_url": "https://search.sigstore.dev/?logIndex=3611600596",
-  "rekor_entries": 109
+  "rekor_latest_size": 2414,
+  "rekor_latest_log_index": 3614194451,
+  "rekor_latest_search_url": "https://search.sigstore.dev/?logIndex=3614194451",
+  "rekor_entries": 110
 }
