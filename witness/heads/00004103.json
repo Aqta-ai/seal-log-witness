@@ -1,0 +1,41 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 4103,
+    "root_hash": "1e71a4f4212e2b62e1e131d46dc0b3bf9cef379ede5539465ddbac3b042d9cf0",
+    "timestamp": "2026-11-14T02:25:13Z",
+    "signature": "q1b62PoIwD3sfpM0WHyKgaZYy_-IBn7_tgGmz2qrCjHT0TWoks4jq1VNIYm8APK3QOCTM5IUVea09fQucf33AQ",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 4078,
+    "new_size": 4103,
+    "old_root": "97fd10229bb0b845fb371c4c47f26b32ade603ba4a1a37822076df564c07c412",
+    "new_root": "1e71a4f4212e2b62e1e131d46dc0b3bf9cef379ede5539465ddbac3b042d9cf0",
+    "consistency_path": [
+      "2a1d530983863ff49f39538fefa4c39ae5a57e0c167250386d91ce3a5834e551",
+      "f17266e60054bd6967755dba7cef4c5ec94b72457241c6bd91440e13889c900d",
+      "a76717022b6e4db2d74d90a4cbf4843300c4f21c97cb46568c886d383c061e96",
+      "2481bda58e7466852394368db144057a39e63d525e6c06f4313fc082144f43a4",
+      "ce4b147807c8b082d4544cb812ef04b11c88a3e715c8b25086f02f8f31776078",
+      "2cfa7ca53de310158138cdb9c17219154f1c99ce9dc3cf52e025ad46be644494",
+      "b044081c95f370888292a650e7beb65bffe6833720825a418ac6991635c50c3f",
+      "9dc9dfe5921bd5802435d8e526b832342a1e2d837d77d67860cb58a9b72b65d0",
+      "3396d4c929d23f85c6d45716b49df7c41b08ad1d2a77fac45a1f4aad60385a2d",
+      "8520737b700a161cf111141b8bea9a7f6c3f288e125eb7ac12ccbe964d4b46cb",
+      "cf4dbdf0dd8c7ca59e4e059a9ad694675a59cedd01b3093b7acb7c1f3a35fd19",
+      "a669d4da4b9ff4b4c353f4e838843d84d8eb875ce02bd427163389446f8a9cdc",
+      "3fd176afa7076f904f3f03afbca9d2e4245ee65443fde0125fe543e61f755062"
+    ]
+  }
+}
