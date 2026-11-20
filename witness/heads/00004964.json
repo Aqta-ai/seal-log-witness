@@ -1,0 +1,39 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 4964,
+    "root_hash": "ca4e431d7da9a9df39345b089bd27871c313818653f33492411501e05d3fae11",
+    "timestamp": "2026-11-20T20:10:21Z",
+    "signature": "JGxYFtfB3UXBlYGd98RTTBAHhuSoIaaFebfX9OTn-jRpF8i7wpnqXwTozgfxDtT8bKwSsv0gvGE4rIOcbrz0BA",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 4919,
+    "new_size": 4964,
+    "old_root": "6d959b9baccff9f3ffb7f076a5243c81e8033b704147c9ff8a7c1fcfe98e3c11",
+    "new_root": "ca4e431d7da9a9df39345b089bd27871c313818653f33492411501e05d3fae11",
+    "consistency_path": [
+      "c83500e59b43d17c2547308ca56ba2d7a500a4e7b53926608d2825bbc932cfc2",
+      "0df19c80f8f17bc135beabf7ce77be202b765419b64ed7431abb49578a5b32fe",
+      "0ce68ef8edb9ec3543296c23c89c026123130d7b623297472db649cab1f35a29",
+      "3763197d44d9fee53c3c3656cba37fa9f800fbbd483d78f4263beb3c9f20335a",
+      "73a534471437f8f91460b41f72b1d0815371500b407bb2cdd2e6de127b200940",
+      "7bb63312a246c1ec1fb3d9ea55947bd1aede9ded77bc7b69768e8ca3f0220bd8",
+      "1092f84113056d8c66cbb1cf8364973a92c1ad04f3f86e6907002d335836bb92",
+      "f2084e3b929ad88aace376d7684b5d9ca4c2ebc5439c8319bdb08690a0f1c57f",
+      "12c2cb2de90e65758145396a3490cef473723d6cde1f84c229761e64986e6619",
+      "48fbb3b95970646dab6fb2b755e964b2a8762a7ad507326e5424f8c5633ce771",
+      "33ea4fbcf4d2e94e187bda841b91a5732ceac7d323834d12446b4ab26aa771b7"
+    ]
+  }
+}
