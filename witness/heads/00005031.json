@@ -1,0 +1,40 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 5031,
+    "root_hash": "c9b5f23ae209abdd46f7aef3d7b0d6a6607aa7e6bc114e534085b0a3ddd587d8",
+    "timestamp": "2026-11-21T09:45:09Z",
+    "signature": "jFjJBSU8gkcO5CrBdryfuSxjWHj-flQt2JkCnEO3vZvG1W23vZyNEwb4lpfO6nxYv00hd_AiIxcEMLqWaIj4Dw",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 4989,
+    "new_size": 5031,
+    "old_root": "a1bc7a2114d0f4c6a4e459d1bb6a496a808620b807c9b441e36cee067ab1caf9",
+    "new_root": "c9b5f23ae209abdd46f7aef3d7b0d6a6607aa7e6bc114e534085b0a3ddd587d8",
+    "consistency_path": [
+      "9192003057f28c0bc6dc81c96cc0ea570acf807c264eb5867cc8ef9a1895dba6",
+      "b558b954410f1fea43e293b501e20a3d05f37f0d82ba8dcb5522accfce11e764",
+      "65a256b9e2b87c4a0080013b42783b03004b75779c3d5f1e95d5229750b541c4",
+      "6465a3b327ed519eb2828263eacadbea41a36aadb6e818c52b5f5771733fa9d8",
+      "7832b744409263d1e93b2f0ede2fad943a1256720a7a98dc3913145e8180c458",
+      "f72ce250cae76f4a4c74a06b4eab9ac7795a0b7637ed76f21c4816fe83ceb254",
+      "1b730baac826f83eb1c5ea5e90c9f96b8e62e12d73e9b2fa34d4abd221a55439",
+      "838248a19edd2a9e77881fd7ea13cbbee45adbf025dec30bfd70a80ab688a09a",
+      "30bd46eff7ce1d64fe55568291afe0ca61c067ed3dec359eceb262a8b10edefc",
+      "12c2cb2de90e65758145396a3490cef473723d6cde1f84c229761e64986e6619",
+      "48fbb3b95970646dab6fb2b755e964b2a8762a7ad507326e5424f8c5633ce771",
+      "33ea4fbcf4d2e94e187bda841b91a5732ceac7d323834d12446b4ab26aa771b7"
+    ]
+  }
+}
