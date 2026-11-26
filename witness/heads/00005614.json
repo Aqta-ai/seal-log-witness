@@ -1,0 +1,40 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 5614,
+    "root_hash": "d7f1a72fc5403fd6e8d8bf24987f178b1c3dddb36f31980f32bff4c678068f2f",
+    "timestamp": "2026-11-26T02:49:25Z",
+    "signature": "MToTFS3PCZUGf60x2jWNxZv4Ri8zcWk9blDcnSaADdT0k_nA2NhwUrvGQVxV-Wf-ctzhBec_sP7CsJUNgPL0BQ",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 5575,
+    "new_size": 5614,
+    "old_root": "87e3d61821daa70cc438279a6642a6b84fc953e81c012b109d5d65fdfdc9cdc8",
+    "new_root": "d7f1a72fc5403fd6e8d8bf24987f178b1c3dddb36f31980f32bff4c678068f2f",
+    "consistency_path": [
+      "2b0a4756ebf3db66fc1e22f2d434a162e2340df362cdfc63f46761aa99bed197",
+      "9d1e987f6530a3adbef5d222af9c1d1e49a3648f1c6b754fe352a9d302c8a082",
+      "234824cfb94f9a510880919c57cf85f146d491ff418755493922ebeefe791bc9",
+      "eea6ede112f76c9ba6c958ddb08bd128f6f545e693fdbdb712ac9761144da9c1",
+      "f47f606954d77639991c2752bc31574e5bae50085990fd87468736135f5241cb",
+      "6cf08ff0b3c64dc54871c51af15249539d5d59b1b6b2a0c3fdac5c75cb4a759b",
+      "0a19f7c686339cdf63706dbc98499f2089e56ec12a3a94e620ef6f93f9f67c3f",
+      "4a20fc2576f6198ef9dbf6be7a7aafea39beab9143fa58d9dcfd59aee1d3cfd4",
+      "df3d1f8a963c74cbc4e734d199d4863416c88d802c2f8b586a3c5fda66d2e80a",
+      "d16d516cd31f13635793d43b35db79c65bd6468ab31c52d92d4b5a97cafd180a",
+      "2a813865784d2fc9d137a9e616d37d555f1c678f0a60dabe3edfeaf4298bd73d",
+      "33ea4fbcf4d2e94e187bda841b91a5732ceac7d323834d12446b4ab26aa771b7"
+    ]
+  }
+}
