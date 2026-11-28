@@ -1,0 +1,41 @@
+{
+  "sth": {
+    "v": 1,
+    "log": "public",
+    "tree_size": 5933,
+    "root_hash": "caa9082cea4d2ce2e45f123d5ea316babf69e08b6dfc60d073b5ce9f25d59680",
+    "timestamp": "2026-11-28T07:42:47Z",
+    "signature": "-Jh3bdfkVYBqrG800Jb0lBNxEGAfOQb82pgBsSUxhikqNbhvoIEjDMLCm9YaUy9jFBOHdYCq3ob8L7WE-manCg",
+    "public_key": "9Y3Eiq6V8QjRDUM5nPqSwKIOPQaoEU4SbagfYFdvWa4",
+    "key_id": "aqta-att-01269bb4b6a7d950",
+    "algorithm": "Ed25519",
+    "signed_over": "aqta-sth-public-v1|<tree_size>|<root_hash bytes>|<timestamp>",
+    "hash": "RFC 6962: leaf = SHA-256(0x00 || entry), node = SHA-256(0x01 || left || right)",
+    "entries": "ATTESTATION-v1 receipts (entry tag 0x00), ACTION-v1 records (entry tag 0x02) and USE-v1 records (entry tag 0x03), one append order",
+    "proof_endpoint": "/v1/public/transparency/proof/{attestation_id, action_id or use_id}",
+    "consistency_endpoint": "/v1/public/transparency/consistency?old_size=N"
+  },
+  "consistency": {
+    "v": 1,
+    "log": "public",
+    "old_size": 5885,
+    "new_size": 5933,
+    "old_root": "77af2743a6a246ac9c47571b8642ae942dea903a59c6faba12e48895a556a94d",
+    "new_root": "caa9082cea4d2ce2e45f123d5ea316babf69e08b6dfc60d073b5ce9f25d59680",
+    "consistency_path": [
+      "3bd45e8cd4f61532b63399d8cabeab11768df1e3b4fcae7ca26172a055b3c437",
+      "1f758aea3db7504ae629b528435195f49cee6f5f5afedc54f159537d1582539a",
+      "af0b5cba0c609c608845503977e4a605c95c5f106fbde9d1c1beb8746d87a282",
+      "65a95528427510a8d13ea46721a04485106d9be1e4a87177f44ad087f0db4722",
+      "4d75e15f9584939c1dd9c3eee9debaec3791fbb4656131e067f54fd08d1899ae",
+      "811aef170ad4bd15413397d7c324903c3f588e920132f87820755192c92bce52",
+      "c20b3da83dbd37066267070e8ac12f4d06ee8e952932c8cac3a7b5745d0fffa9",
+      "6681d51d6a0e22fc3736f4aa595e28377bea7aa8eca6b5625f0e2e423a45a351",
+      "512269ff1e5082884af7752c48c62d7428d2a7b52b4d609f7d3de889a5e1cee9",
+      "08d2e7cfa8b23a096a7e09f9f2394d459765091a970803dd8cc7d14ff7f1ea1b",
+      "a5516a558b3ec13cb4090d3ff4086afbacd55f5ad779e5c41fdac788f05c5a86",
+      "2a813865784d2fc9d137a9e616d37d555f1c678f0a60dabe3edfeaf4298bd73d",
+      "33ea4fbcf4d2e94e187bda841b91a5732ceac7d323834d12446b4ab26aa771b7"
+    ]
+  }
+}
